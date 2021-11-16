@@ -1,24 +1,6 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  forwardRef,
-  ViewChild,
-  AfterViewInit,
-  Injector
-} from "@angular/core";
-import {
-  NgbTimeStruct,
-  NgbDateStruct,
-  NgbPopoverConfig,
-  NgbPopover,
-  NgbDatepicker
-} from "@ng-bootstrap/ng-bootstrap";
-import {
-  NG_VALUE_ACCESSOR,
-  ControlValueAccessor,
-  NgControl
-} from "@angular/forms";
+import {Component,OnInit,Input,forwardRef,ViewChild,AfterViewInit,Injector} from "@angular/core";
+import {NgbTimeStruct,NgbDateStruct,NgbPopoverConfig,NgbPopover,  NgbDatepicker} from "@ng-bootstrap/ng-bootstrap";
+import {NG_VALUE_ACCESSOR,ControlValueAccessor,NgControl} from "@angular/forms";
 import { DatePipe } from "@angular/common";
 import { DateTimeModel } from "./date-time.model";
 import { noop } from "rxjs";
@@ -38,23 +20,14 @@ import { noop } from "rxjs";
 })
 export class DateTimePickerComponent
   implements ControlValueAccessor, OnInit, AfterViewInit {
-  @Input()
-  dateString: string;
+  @Input() dateString: string;
 
-  @Input()
-  inputDatetimeFormat = "M/d/yyyy H:mm:ss";
-  @Input()
-  hourStep = 1;
-  @Input()
-  minuteStep = 15;
-  @Input()
-  secondStep = 30;
-  @Input()
-  seconds = true;
-
-  @Input()
-  disabled = false;
-
+  @Input() inputDatetimeFormat = "M/d/yyyy H:mm:ss";
+  @Input() hourStep = 1;
+  @Input() minuteStep = 15;
+  @Input() secondStep = 30;
+  @Input() seconds = true;
+  @Input() disabled = false;
   private showTimePickerToggle = false;
 
   private datetime: DateTimeModel = new DateTimeModel();
