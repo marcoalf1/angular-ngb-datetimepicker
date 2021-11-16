@@ -15,8 +15,10 @@ export class AppComponent implements OnInit  {
 
   ngOnInit() {
     this.formGroup = new FormGroup({
-      activeEndDate:  new FormControl(new Date(), {validators: [Validators.required, DateTimeValidator]})
-    }, { updateOn: 'change' });
+      activeEndDate:  new FormControl(new Date(), 
+      {validators: [Validators.required, DateTimeValidator]})
+    }, 
+    { updateOn: 'change' });
   }
 }
 
